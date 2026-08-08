@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharatpur Rider | Ride • Travel • Explore India</title>
+    <meta name="description" content="Official website of Bharatpur Rider - Cinematic motorcycle vlogs, India road trip guides, travel itineraries, and adventure gear reviews inspired by top moto-vloggers.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#FF3B30',
+                            orange: '#FF9500',
+                            dark: '#0A0A0C',
+                            card: '#141419',
+                            border: '#2A2A35'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        cinematic: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0C;
+            color: #F3F4F6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .font-cinematic {
+            font-family: 'Outfit', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(20, 20, 25, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(25, 25, 35, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glow-red {
+            box-shadow: 0 0 35px rgba(255, 59, 48, 0.35);
+        }
+        .glow-orange {
+            box-shadow: 0 0 35px rgba(255, 149, 0, 0.3);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A2A35;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF3B30;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.03); opacity: 0.9; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 6s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-100 min-h-screen flex flex-col selection:bg-brand-red selection:text-white">
+
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-brand-red glow-red transition-transform duration-300 group-hover:scale-105">
+                    <img src="https://placehold.co/150x150/FF3B30/FFFFFF?text=BR" alt="Bharatpur Rider" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-xl sm:text-2xl font-black font-cinematic tracking-wider text-white uppercase flex items-center gap-1">
+                        Bharatpur <span class="text-brand-red">Rider</span>
+                    </span>
+                    <span class="text-xs text-gray-400 tracking-widest block font-medium">Ride • Travel • Explore</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-brand-red transition-colors">Home</a>
+                <a href="#videos" class="hover:text-brand-red transition-colors">Videos</a>
+                <a href="#shorts" class="hover:text-brand-red transition-colors">Shorts</a>
+                <a href="#blog" class="hover:text-brand-red transition-colors">Travel Blog</a>
+                <a href="#gear" class="hover:text-brand-red transition-colors">Gear & Setup</a>
+                <a href="#stats" class="hover:text-brand-red transition-colors">Stats & Map</a>
+                <a href="#ai-hub" class="hover:text-brand-red transition-colors flex items-center gap-1.5 text-brand-orange font-semibold">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> AI Hub
+                </a>
+                <a href="#contact" class="hover:text-brand-red transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Subscribe Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://youtube.com/@bharatpurrider" target="_blank" class="relative group overflow-hidden rounded-full p-[2px] focus:outline-none">
+                    <span class="absolute inset-0 bg-gradient-to-r from-brand-red to-brand-orange animate-pulse"></span>
+                    <span class="relative px-5 py-2.5 rounded-full bg-brand-dark flex items-center gap-2 text-white font-bold text-sm tracking-wide transition-all duration-300 group-hover:bg-opacity-80">
+                        <i class="fa-brands fa-youtube text-brand-red text-lg"></i>
+                        <span>Subscribe</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-white p-2 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-panel border-t border-white/10 px-6 py-6 space-y-4">
+            <a href="#home" class="block text-lg font-medium text-gray-200 hover:text-brand-red">Home</a>
+            <a href="#videos" class="block text-lg font-medium text-gray-200 hover:text-brand-red">Videos</a>
+            <a href="#shorts" class="block text-lg font-medium text-gray-200 hover:text-brand-red">Shorts</a>
+            <a href="#blog" class="block text-lg font-medium text-gray-200 hover:text-brand-red">Travel Blog</a>
+            <a href="#gear" class="block text-lg font-medium text-gray-200 hover:text-brand-red">Gear & Setup</a>
+            <a href="#stats" class="block text-lg font-medium text-gray-200 hover:text-brand-red">Stats & Map</a>
+            <a href="#ai-hub" class="block text-lg font-medium text-brand-orange">AI Travel Hub</a>
+            <a href="#contact" class="block text-lg font-medium text-gray-200 hover:text-brand-red">Contact</a>
+            <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                <a href="https://youtube.com/@bharatpurrider" target="_blank" class="w-full text-center bg-brand-red text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-youtube"></i> Subscribe on YouTube
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <!-- Background Overlay & Parallax effect -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent z-10"></div>
+            <div class="absolute inset-0 bg-radial from-transparent via-brand-dark/60 to-brand-dark z-10"></div>
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=1920&auto=format&fit=crop" alt="Hero Motorcycle Adventure" class="w-full h-full object-cover animate-pulse-slow filter brightness-75">
+        </div>
+
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-brand-red/30 mb-6 text-brand-orange text-xs sm:text-sm font-semibold tracking-wider uppercase animate-bounce">
+                <i class="fa-solid fa-fire text-brand-red"></i> India's Premier Moto-Vlogging Adventure
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black font-cinematic tracking-tight text-white max-w-4xl leading-none mb-6">
+                RIDE INTO THE <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-brand-orange to-amber-400">UNKNOWN</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mb-10 font-normal leading-relaxed">
+                Join <span class="text-white font-semibold">Bharatpur Rider</span> on epic motorcycle expeditions across Rajasthan, Himalayan passes, and hidden trails of India. Cinematic storytelling, raw wanderlust, and pure adventure.
+            </p>
+
+            <!-- Subscriber Counter & CTA group -->
+            <div class="flex flex-col sm:flex-row items-center gap-5 mb-12 w-full justify-center">
+                <a href="https://youtube.com/@bharatpurrider" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-brand-red to-brand-orange text-white font-bold text-base tracking-wide shadow-lg glow-red hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-youtube text-2xl"></i>
+                    <span>Join 50K+ Riders • Subscribe</span>
+                </a>
+                <a href="#videos" class="w-full sm:w-auto px-8 py-4 rounded-2xl glass-panel text-white font-semibold text-base tracking-wide hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 border border-white/20">
+                    <i class="fa-solid fa-play text-brand-red"></i>
+                    <span>Watch Latest Vlogs</span>
+                </a>
+            </div>
+
+            <!-- Live Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mt-6">
+                <div class="glass-card p-5 rounded-2xl border border-white/10 text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-white font-cinematic mb-1">52.8K</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Subscribers</div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl border border-white/10 text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-orange font-cinematic mb-1">4.5M+</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Total Views</div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl border border-white/10 text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-white font-cinematic mb-1">28+</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold">States Explored</div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl border border-white/10 text-center">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-red font-cinematic mb-1">120K</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Kilometers Ridden</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="py-20 bg-brand-dark/90 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-red font-semibold text-sm tracking-widest uppercase block mb-2">Fresh From The Road</span>
+                    <h2 class="text-3xl sm:text-5xl font-black font-cinematic tracking-tight text-white">LATEST YOUTUBE VLOGS</h2>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center gap-3">
+                    <button class="px-4 py-2 rounded-xl bg-brand-card border border-white/10 text-sm font-semibold hover:border-brand-red transition-all active-filter text-white" data-filter="all">All Rides</button>
+                    <button class="px-4 py-2 rounded-xl bg-brand-card border border-white/10 text-sm font-semibold hover:border-brand-red transition-all" data-filter="heritage">Heritage & Palaces</button>
+                    <button class="px-4 py-2 rounded-xl bg-brand-card border border-white/10 text-sm font-semibold hover:border-brand-red transition-all" data-filter="group">Group Rides</button>
+                </div>
+            </div>
+
+            <!-- Videos Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="glass-card rounded-3xl overflow-hidden group border border-white/10 hover:border-brand-red/50 transition-all duration-300">
+                    <div class="relative aspect-video overflow-hidden cursor-pointer" onclick="openVideoModal('hkCToX5SNQw', 'Mahal Khas Palace Bharatpur | Luxury Heritage Hotel')">
+                        <img src="https://img.youtube.com/vi/hkCToX5SNQw/maxresdefault.jpg" alt="Mahal Khas Palace Bharatpur" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                            <div class="w-16 h-16 rounded-full bg-brand-red flex items-center justify-center text-white text-xl shadow-lg glow-red group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/80 text-xs font-semibold text-white">13:51</span>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-brand-red text-xs font-bold text-white uppercase tracking-wider">Heritage</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-xs text-gray-400 mb-2">
+                            <span><i class="fa-regular fa-clock"></i> Jul 31, 2026</span>
+                            <span>•</span>
+                            <span><i class="fa-regular fa-eye"></i> 7.8K views</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-cinematic text-white group-hover:text-brand-red transition-colors line-clamp-2 mb-3">
+                            Mahal Khas Palace Bharatpur | Luxury Heritage Hotel in Bharatpur Rajasthan | 5 Star Experience
+                        </h3>
+                        <p class="text-gray-400 text-sm line-clamp-2 mb-4">
+                            Exploring the royal heritage, architecture, and luxurious stay experience inside Bharatpur's iconic Mahal Khas Palace.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                            <span class="text-xs text-brand-orange font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-thumbs-up"></i> 83 Likes
+                            </span>
+                            <button onclick="openVideoModal('hkCToX5SNQw', 'Mahal Khas Palace Bharatpur')" class="text-sm text-white font-semibold hover:text-brand-red flex items-center gap-1">
+                                Watch Now <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="glass-card rounded-3xl overflow-hidden group border border-white/10 hover:border-brand-red/50 transition-all duration-300">
+                    <div class="relative aspect-video overflow-hidden cursor-pointer" onclick="openVideoModal('2FYZ_9bLbjY', 'Bharatpur To Barsana Sunday Group Ride')">
+                        <img src="https://img.youtube.com/vi/2FYZ_9bLbjY/maxresdefault.jpg" alt="Bharatpur To Barsana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                            <div class="w-16 h-16 rounded-full bg-brand-red flex items-center justify-center text-white text-xl shadow-lg glow-red group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/80 text-xs font-semibold text-white">13:43</span>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-brand-orange text-xs font-bold text-white uppercase tracking-wider">Group Ride</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-xs text-gray-400 mb-2">
+                            <span><i class="fa-regular fa-clock"></i> Apr 26, 2026</span>
+                            <span>•</span>
+                            <span><i class="fa-regular fa-eye"></i> 1.1K views</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-cinematic text-white group-hover:text-brand-red transition-colors line-clamp-2 mb-3">
+                            Bharatpur To Barsana Sunday Group Ride | bharatpur se barsana | motovlog bharatpur
+                        </h3>
+                        <p class="text-gray-400 text-sm line-clamp-2 mb-4">
+                            Epic Sunday morning group ride cruising from Bharatpur to the historic town of Barsana with fellow riders.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                            <span class="text-xs text-brand-orange font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-thumbs-up"></i> 12 Likes
+                            </span>
+                            <button onclick="openVideoModal('2FYZ_9bLbjY', 'Bharatpur To Barsana Sunday Group Ride')" class="text-sm text-white font-semibold hover:text-brand-red flex items-center gap-1">
+                                Watch Now <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="glass-card rounded-3xl overflow-hidden group border border-white/10 hover:border-brand-red/50 transition-all duration-300">
+                    <div class="relative aspect-video overflow-hidden cursor-pointer" onclick="openVideoModal('5uqOhSfuxyw', 'JAWA BOBBER 42 Full Review')">
+                        <img src="https://img.youtube.com/vi/5uqOhSfuxyw/maxresdefault.jpg" alt="JAWA BOBBER 42" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                            <div class="w-16 h-16 rounded-full bg-brand-red flex items-center justify-center text-white text-xl shadow-lg glow-red group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/80 text-xs font-semibold text-white">12:52</span>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-red-600 text-xs font-bold text-white uppercase tracking-wider">Bike Review</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-xs text-gray-400 mb-2">
+                            <span><i class="fa-regular fa-clock"></i> Sep 24, 2023</span>
+                            <span>•</span>
+                            <span><i class="fa-regular fa-eye"></i> 2.6K views</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-cinematic text-white group-hover:text-brand-red transition-colors line-clamp-2 mb-3">
+                            JAWA BOBBER 42 new 2023 full Review | Exhaust Note & Ride Test
+                        </h3>
+                        <p class="text-gray-400 text-sm line-clamp-2 mb-4">
+                            Complete honest review of the Jawa Bobber 42 2023 model, covering exhaust sound, riding ergonomics, and mileage.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                            <span class="text-xs text-brand-orange font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-thumbs-up"></i> 64 Likes
+                            </span>
+                            <button onclick="openVideoModal('5uqOhSfuxyw', 'JAWA BOBBER 42 Full Review')" class="text-sm text-white font-semibold hover:text-brand-red flex items-center gap-1">
+                                Watch Now <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shorts" class="py-20 bg-brand-dark border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-12">
+                <div>
+                    <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase block mb-2">Bite-Sized Action</span>
+                    <h2 class="text-3xl sm:text-5xl font-black font-cinematic tracking-tight text-white">POPULAR SHORTS</h2>
+                </div>
+                <a href="https://youtube.com/@bharatpurrider/shorts" target="_blank" class="text-brand-red hover:underline font-semibold flex items-center gap-2">
+                    View All Shorts <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Short 1 -->
+                <div class="glass-card rounded-3xl overflow-hidden group relative aspect-[9/16] cursor-pointer" onclick="openVideoModal('hHzNwURmvys', 'konsi bike hai comment kren #shorts')">
+                    <img src="https://img.youtube.com/vi/hHzNwURmvys/hqdefault.jpg" alt="Shorts 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+                        <span class="px-2.5 py-1 rounded-md bg-brand-red/80 text-[10px] font-bold text-white w-max mb-2">Short #1</span>
+                        <h4 class="text-sm font-bold text-white line-clamp-2 mb-2">konsi bike hai comment kren #shorts #bharatpurrider</h4>
+                        <span class="text-xs text-gray-400"><i class="fa-regular fa-eye"></i> 1.2K Views</span>
+                    </div>
+                </div>
+                <!-- Short 2 -->
+                <div class="glass-card rounded-3xl overflow-hidden group relative aspect-[9/16] cursor-pointer" onclick="openVideoModal('hHzNwURmvys', 'Morning Ride Vibes #shorts')">
+                    <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=600&auto=format&fit=crop" alt="Shorts 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+                        <span class="px-2.5 py-1 rounded-md bg-brand-orange/80 text-[10px] font-bold text-white w-max mb-2">Short #2</span>
+                        <h4 class="text-sm font-bold text-white line-clamp-2 mb-2">Exhaust note check on Highway! 🔥 #shortsvideo</h4>
+                        <span class="text-xs text-gray-400"><i class="fa-regular fa-eye"></i> 3.4K Views</span>
+                    </div>
+                </div>
+                <!-- Short 3 -->
+                <div class="glass-card rounded-3xl overflow-hidden group relative aspect-[9/16] cursor-pointer" onclick="openVideoModal('hHzNwURmvys', 'Rajasthan Sunset Ride #shorts')">
+                    <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=600&auto=format&fit=crop" alt="Shorts 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+                        <span class="px-2.5 py-1 rounded-md bg-brand-red/80 text-[10px] font-bold text-white w-max mb-2">Short #3</span>
+                        <h4 class="text-sm font-bold text-white line-clamp-2 mb-2">Golden hour ride through Bharatpur bypass ✨</h4>
+                        <span class="text-xs text-gray-400"><i class="fa-regular fa-eye"></i> 5.1K Views</span>
+                    </div>
+                </div>
+                <!-- Short 4 -->
+                <div class="glass-card rounded-3xl overflow-hidden group relative aspect-[9/16] cursor-pointer" onclick="openVideoModal('hHzNwURmvys', 'Helmet Setup Quick View')">
+                    <img src="https://images.unsplash.com/photo-1558980664-3a031cf67ea8?q=80&w=600&auto=format&fit=crop" alt="Shorts 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5">
+                        <span class="px-2.5 py-1 rounded-md bg-brand-orange/80 text-[10px] font-bold text-white w-max mb-2">Short #4</span>
+                        <h4 class="text-sm font-bold text-white line-clamp-2 mb-2">My GoPro Helmet Mount Setup 2026 🎥</h4>
+                        <span class="text-xs text-gray-400"><i class="fa-regular fa-eye"></i> 4.8K Views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-hub" class="py-20 bg-gradient-to-b from-brand-dark to-brand-card/50 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase block mb-2"><i class="fa-solid fa-wand-magic-sparkles"></i> Powered by Gemini AI</span>
+                <h2 class="text-3xl sm:text-5xl font-black font-cinematic tracking-tight text-white mb-4">AI TRAVEL & RIDE ASSISTANT</h2>
+                <p class="text-gray-400 text-base">Plan your next Rajasthan road trip, discover secret dhaba spots, or ask for bike maintenance tips instantly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- AI Trip Planner Widget -->
+                <div class="lg:col-span-2 glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold font-cinematic text-white mb-4 flex items-center gap-3">
+                            <i class="fa-solid fa-route text-brand-red"></i> Custom Ride Itinerary Generator
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-6">Select your destination preference and let AI create a detailed weekend moto-trip itinerary for you.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Starting From</label>
+                                <select id="ai-start" class="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-red">
+                                    <option value="Bharatpur">Bharatpur, Rajasthan</option>
+                                    <option value="Agra">Agra, Uttar Pradesh</option>
+                                    <option value="Mathura">Mathura, UP</option>
+                                    <option value="Jaipur">Jaipur, Rajasthan</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Trip Type</label>
+                                <select id="ai-type" class="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-red">
+                                    <option value="Heritage & Palaces">Heritage & Palaces</option>
+                                    <option value="Highway Cruise & Dhaba">Highway Cruise & Dhaba Food</option>
+                                    <option value="Offroad & Hills">Offroad & Hills</option>
+                                    <option value="Religious & Cultural">Religious & Cultural</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button onclick="generateAIItinerary()" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-red to-brand-orange text-white font-bold tracking-wide shadow-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-sparkles"></i> Generate Itinerary with AI
+                        </button>
+                    </div>
+
+                    <div id="ai-result-box" class="mt-8 hidden p-5 rounded-2xl bg-brand-dark/80 border border-white/10 text-sm text-gray-300 leading-relaxed">
+                        <!-- AI output will appear here -->
+                    </div>
+                </div>
+
+                <!-- Quick AI Travel Chat -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold font-cinematic text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-robot text-brand-orange"></i> Bharatpur Rider AI Bot
+                        </h3>
+                        <p class="text-gray-400 text-xs mb-4">Ask anything about my gear, bike models, or camera setup!</p>
+                        
+                        <div id="chat-messages" class="h-60 overflow-y-auto space-y-3 mb-4 pr-2 text-xs">
+                            <div class="p-3 rounded-xl bg-brand-card border border-white/5 text-gray-300">
+                                <span class="text-brand-orange font-semibold block mb-1">RiderBot:</span>
+                                Sat Sri Akal! Ask me anything about motorcycle touring in India.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <input type="text" id="chat-input" placeholder="Ask about bike, camera, routes..." class="flex-1 bg-brand-dark border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-red">
+                        <button onclick="sendAIChatMessage()" class="px-4 py-3 bg-brand-red rounded-xl text-white font-bold hover:bg-red-600 transition-colors">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-red font-semibold text-sm tracking-widest uppercase block mb-2">Riding Stories & Guides</span>
+                    <h2 class="text-3xl sm:text-5xl font-black font-cinematic tracking-tight text-white">THE TRAVEL BLOG</h2>
+                </div>
+                <div class="mt-4 md:mt-0 flex gap-2">
+                    <span class="px-4 py-2 rounded-xl bg-brand-card border border-white/10 text-xs text-gray-300">SEO Optimized</span>
+                    <span class="px-4 py-2 rounded-xl bg-brand-card border border-white/10 text-xs text-gray-300">MDX Ready</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Card 1 -->
+                <article class="glass-card rounded-3xl overflow-hidden border border-white/10 hover:border-brand-red/40 transition-all group">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800&auto=format&fit=crop" alt="Rajasthan Road Trip" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-brand-red text-xs font-bold text-white uppercase tracking-wider">Road Trip Itinerary</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-xs text-gray-400 mb-3">
+                            <span><i class="fa-regular fa-calendar"></i> Oct 12, 2025</span>
+                            <span>•</span>
+                            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-cinematic text-white group-hover:text-brand-red transition-colors mb-3">
+                            Ultimate Rajasthan Road Trip Itinerary: Bharatpur to Jaipur via Fatehpur Sikri
+                        </h3>
+                        <p class="text-gray-400 text-sm line-clamp-3 mb-4">
+                            Discover the best highway routes, hidden dhaba food stops, and historical monuments on your motorcycle ride across eastern Rajasthan.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                            <div class="flex items-center gap-2">
+                                <img src="https://placehold.co/100x100/FF3B30/FFFFFF?text=BR" alt="Bharatpur Rider" class="w-7 h-7 rounded-full object-cover">
+                                <span class="text-xs font-medium text-gray-300">Bharatpur Rider</span>
+                            </div>
+                            <a href="#blog" class="text-xs font-bold text-brand-orange hover:underline flex items-center gap-1">
+                                Read Article <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="glass-card rounded-3xl overflow-hidden border border-white/10 hover:border-brand-red/40 transition-all group">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?q=80&w=800&auto=format&fit=crop" alt="Motorcycle Riding Gear" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-brand-orange text-xs font-bold text-white uppercase tracking-wider">Gear Review</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-xs text-gray-400 mb-3">
+                            <span><i class="fa-regular fa-calendar"></i> Nov 04, 2025</span>
+                            <span>•</span>
+                            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-cinematic text-white group-hover:text-brand-red transition-colors mb-3">
+                            Top 5 Riding Jackets & Helmets for Indian Highway Touring in 2026
+                        </h3>
+                        <p class="text-gray-400 text-sm line-clamp-3 mb-4">
+                            An honest, weather-tested review of riding jackets, CE-level armor, and intercom systems for long-distance moto-vloggers.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                            <div class="flex items-center gap-2">
+                                <img src="https://placehold.co/100x100/FF3B30/FFFFFF?text=BR" alt="Bharatpur Rider" class="w-7 h-7 rounded-full object-cover">
+                                <span class="text-xs font-medium text-gray-300">Bharatpur Rider</span>
+                            </div>
+                            <a href="#blog" class="text-xs font-bold text-brand-orange hover:underline flex items-center gap-1">
+                                Read Article <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="glass-card rounded-3xl overflow-hidden border border-white/10 hover:border-brand-red/40 transition-all group">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop" alt="Hidden Places in India" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-red-600 text-xs font-bold text-white uppercase tracking-wider">Hidden Places</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 text-xs text-gray-400 mb-3">
+                            <span><i class="fa-regular fa-calendar"></i> Dec 19, 2025</span>
+                            <span>•</span>
+                            <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-cinematic text-white group-hover:text-brand-red transition-colors mb-3">
+                            Secret Waterfalls and Offbeat Camping Spots Near Bharatpur You Never Knew Existed
+                        </h3>
+                        <p class="text-gray-400 text-sm line-clamp-3 mb-4">
+                            Escape the city crowd and explore untouched nature spots perfect for weekend campfire camping on your motorcycle.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                            <div class="flex items-center gap-2">
+                                <img src="https://placehold.co/100x100/FF3B30/FFFFFF?text=BR" alt="Bharatpur Rider" class="w-7 h-7 rounded-full object-cover">
+                                <span class="text-xs font-medium text-gray-300">Bharatpur Rider</span>
+                            </div>
+                            <a href="#blog" class="text-xs font-bold text-brand-orange hover:underline flex items-center gap-1">
+                                Read Article <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="gear" class="py-20 bg-brand-card/40 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase block mb-2">My Arsenal</span>
+                <h2 class="text-3xl sm:text-5xl font-black font-cinematic tracking-tight text-white mb-4">GEAR & CAMERA SETUP</h2>
+                <p class="text-gray-400 text-sm">The exact cameras, microphones, and motorcycle accessories I use to film cinematic moto-vlogs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Gear Item 1 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 bg-brand-dark flex items-center justify-center p-4">
+                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop" alt="Action Camera" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                        <span class="text-xs text-brand-red font-bold uppercase tracking-wider block mb-1">Primary Camera</span>
+                        <h4 class="text-lg font-bold font-cinematic text-white mb-2">GoPro Hero 12 Black</h4>
+                        <p class="text-xs text-gray-400 mb-4">HyperSmooth 6.0 stabilization and 5.3K resolution for ultra-crisp helmet POV shots.</p>
+                    </div>
+                    <a href="https://amazon.in" target="_blank" class="w-full py-2.5 rounded-xl bg-brand-dark border border-white/20 text-white font-semibold text-xs flex items-center justify-center gap-2 hover:bg-brand-red transition-colors">
+                        <i class="fa-brands fa-amazon"></i> Check on Amazon
+                    </a>
+                </div>
+
+                <!-- Gear Item 2 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 bg-brand-dark flex items-center justify-center p-4">
+                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=400&auto=format&fit=crop" alt="Mic" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                        <span class="text-xs text-brand-orange font-bold uppercase tracking-wider block mb-1">Audio Recording</span>
+                        <h4 class="text-lg font-bold font-cinematic text-white mb-2">DJI Mic 2 Wireless</h4>
+                        <p class="text-xs text-gray-400 mb-4">Crystal clear voice capture inside the helmet with active wind noise cancellation.</p>
+                    </div>
+                    <a href="https://amazon.in" target="_blank" class="w-full py-2.5 rounded-xl bg-brand-dark border border-white/20 text-white font-semibold text-xs flex items-center justify-center gap-2 hover:bg-brand-red transition-colors">
+                        <i class="fa-brands fa-amazon"></i> Check on Amazon
+                    </a>
+                </div>
+
+                <!-- Gear Item 3 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 bg-brand-dark flex items-center justify-center p-4">
+                            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=400&auto=format&fit=crop" alt="Motorcycle" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                        <span class="text-xs text-brand-red font-bold uppercase tracking-wider block mb-1">Touring Beast</span>
+                        <h4 class="text-lg font-bold font-cinematic text-white mb-2">Jawa 42 Bobber</h4>
+                        <p class="text-xs text-gray-400 mb-4">Custom exhaust note, comfortable riding posture, and striking retro road presence.</p>
+                    </div>
+                    <a href="#contact" class="w-full py-2.5 rounded-xl bg-brand-dark border border-white/20 text-white font-semibold text-xs flex items-center justify-center gap-2 hover:bg-brand-red transition-colors">
+                        <i class="fa-solid fa-motorcycle"></i> Bike Specs
+                    </a>
+                </div>
+
+                <!-- Gear Item 4 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 bg-brand-dark flex items-center justify-center p-4">
+                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=400&auto=format&fit=crop" alt="Riding Boots" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                        <span class="text-xs text-brand-orange font-bold uppercase tracking-wider block mb-1">Safety Armor</span>
+                        <h4 class="text-lg font-bold font-cinematic text-white mb-2">Rynox Air GT Jacket</h4>
+                        <p class="text-xs text-gray-400 mb-4">CE Level 2 certified protectors with maximum airflow for hot Indian summer rides.</p>
+                    </div>
+                    <a href="https://amazon.in" target="_blank" class="w-full py-2.5 rounded-xl bg-brand-dark border border-white/20 text-white font-semibold text-xs flex items-center justify-center gap-2 hover:bg-brand-red transition-colors">
+                        <i class="fa-brands fa-amazon"></i> Check on Amazon
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-red font-semibold text-sm tracking-widest uppercase block mb-2">Journey Milestone</span>
+                    <h2 class="text-3xl sm:text-5xl font-black font-cinematic tracking-tight text-white mb-6">EXPLORING THE HEART OF INDIA</h2>
+                    <p class="text-gray-300 text-base mb-8 leading-relaxed">
+                        From the historic lanes of Bharatpur and Agra to the majestic sand dunes of Rajasthan and twisty mountain roads of Uttarakhand—every mile tells a story.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="glass-card p-4 rounded-2xl border border-white/10 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand-red/20 text-brand-red flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-road"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Total Distance Covered</h4>
+                                    <span class="text-xs text-gray-400">Since channel inception</span>
+                                </div>
+                            </div>
+                            <span class="text-xl font-bold font-cinematic text-brand-orange">120,450 KM</span>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl border border-white/10 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand-orange/20 text-brand-orange flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-map-pin"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Indian States Visited</h4>
+                                    <span class="text-xs text-gray-400">Rajasthan, UP, Haryana, Delhi, MP, HP</span>
+                                </div>
+                            </div>
+                            <span class="text-xl font-bold font-cinematic text-white">28 States</span>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl border border-white/10 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-red-600/20 text-red-500 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Upcoming Group Ride</h4>
+                                    <span class="text-xs text-gray-400">Bharatpur to Mathura Highway Meetup</span>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-brand-red text-xs font-bold text-white animate-pulse">Next Sunday</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Simulation Card -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 relative overflow-hidden">
+                    <h3 class="text-xl font-bold font-cinematic text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-earth-asia text-brand-red"></i> India Ride Map Tracker
+                    </h3>
+                    <div class="aspect-video w-full rounded-2xl bg-brand-dark/90 border border-white/10 relative flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop" alt="India Map Background" class="w-full h-full object-cover filter brightness-50">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-black/40 backdrop-blur-[2px]">
+                            <div class="w-12 h-12 rounded-full bg-brand-red flex items-center justify-center text-white text-xl animate-bounce mb-3 glow-red">
+                                <i class="fa-solid fa-location-crosshairs"></i>
+                            </div>
+                            <h4 class="text-lg font-bold font-cinematic text-white mb-1">Basecamp: Bharatpur, Rajasthan</h4>
+                            <p class="text-xs text-gray-300 max-w-xs mb-4">Active GPS tracking enabled for live community group rides.</p>
+                            <a href="https://whatsapp.com" target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center gap-2 hover:bg-emerald-500 transition-colors">
+                                <i class="fa-brands fa-whatsapp text-base"></i> Join WhatsApp Ride Community
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-brand-card/30 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <span class="text-brand-orange font-semibold text-sm tracking-widest uppercase block mb-2">Get In Touch</span>
+                    <h2 class="text-3xl sm:text-5xl font-black font-cinematic tracking-tight text-white mb-6">SPONSORSHIPS & COLLABS</h2>
+                    <p class="text-gray-300 text-base mb-8 leading-relaxed">
+                        Are you a brand looking to reach 50,000+ passionate motorcycle enthusiasts and travel lovers across India? Let's collaborate on epic video campaigns and reviews.
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-red/20 text-brand-red flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block font-semibold">Business Email</span>
+                                <span class="text-white font-medium">contact@bharatpurrider.com</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-orange/20 text-brand-orange flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block font-semibold">Location</span>
+                                <span class="text-white font-medium">Bharatpur, Rajasthan, India (321001)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <a href="https://youtube.com/@bharatpurrider" target="_blank" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-white hover:text-brand-red hover:border-brand-red transition-all">
+                            <i class="fa-brands fa-youtube text-xl"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-white hover:text-brand-orange hover:border-brand-orange transition-all">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-white hover:text-blue-500 hover:border-blue-500 transition-all">
+                            <i class="fa-brands fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-white hover:text-sky-400 hover:border-sky-400 transition-all">
+                            <i class="fa-brands fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-panel p-8 rounded-3xl border border-white/10">
+                    <h3 class="text-2xl font-bold font-cinematic text-white mb-6">Send a Message</h3>
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Your Name</label>
+                            <input type="text" required placeholder="Rider / Brand Name" class="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-red text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Email Address</label>
+                            <input type="email" required placeholder="name@example.com" class="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-red text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Inquiry Type</label>
+                            <select class="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-red text-sm">
+                                <option>Brand Sponsorship / Collaboration</option>
+                                <option>Group Ride Inquiry</option>
+                                <option>General Fan Mail</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Message</label>
+                            <textarea rows="4" required placeholder="Tell me about your project or query..." class="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-brand-red text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-red to-brand-orange text-white font-bold tracking-wide shadow-lg hover:opacity-90 transition-all">
+                            Send Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark border-t border-white/10 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <a href="#home" class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-brand-red">
+                            <img src="https://placehold.co/150x150/FF3B30/FFFFFF?text=BR" alt="Bharatpur Rider" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xl font-black font-cinematic tracking-wider text-white uppercase">
+                            Bharatpur <span class="text-brand-red">Rider</span>
+                        </span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-sm mb-6">
+                        Ride • Travel • Explore India. Inspiring the next generation of motorcycle adventurers through cinematic storytelling and road trip guides.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://youtube.com/@bharatpurrider" target="_blank" class="px-4 py-2 rounded-xl bg-brand-card border border-white/10 text-xs font-semibold text-white hover:text-brand-red transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-youtube text-brand-red"></i> YouTube Channel
+                        </a>
+                        <a href="https://whatsapp.com" target="_blank" class="px-4 py-2 rounded-xl bg-brand-card border border-white/10 text-xs font-semibold text-white hover:text-emerald-500 transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-500"></i> WhatsApp Group
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold font-cinematic mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-brand-red transition-colors">Home</a></li>
+                        <li><a href="#videos" class="hover:text-brand-red transition-colors">Latest Vlogs</a></li>
+                        <li><a href="#shorts" class="hover:text-brand-red transition-colors">Popular Shorts</a></li>
+                        <li><a href="#blog" class="hover:text-brand-red transition-colors">Travel Blog</a></li>
+                        <li><a href="#gear" class="hover:text-brand-red transition-colors">Gear & Setup</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold font-cinematic mb-4">Legal & SEO</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Affiliate Disclaimer</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Sitemap.xml</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; 2026 Bharatpur Rider. All rights reserved. Built for creators.</p>
+                <p class="mt-2 sm:mt-0">Inspired by Yes Theory, Mumbiker Nikhil & Nomadic Indian.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="video-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl bg-brand-dark rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <div class="flex items-center justify-between p-4 border-b border-white/10">
+                <h3 id="modal-title" class="text-white font-bold font-cinematic text-lg truncate">Bharatpur Rider Vlog</h3>
+                <button onclick="closeVideoModal()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-red text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="aspect-video w-full bg-black">
+                <iframe id="modal-iframe" class="w-full h-full" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="p-6 flex items-center justify-between bg-brand-card/50">
+                <div class="flex items-center gap-3">
+                    <a href="https://youtube.com/@bharatpurrider" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-red text-white font-bold text-xs flex items-center gap-2 hover:bg-red-600 transition-colors">
+                        <i class="fa-brands fa-youtube"></i> Subscribe on YouTube
+                    </a>
+                </div>
+                <button onclick="closeVideoModal()" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs transition-colors">
+                    Close Player
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-brand-dark/95', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-brand-dark/95', 'shadow-lg');
+            }
+        });
+
+        // Video Modal Handler
+        function openVideoModal(videoId, title) {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('modal-iframe');
+            const modalTitle = document.getElementById('modal-title');
+
+            modalTitle.innerText = title;
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('modal-iframe');
+
+            iframe.src = '';
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // AI Trip Itinerary Generator
+        function generateAIItinerary() {
+            const start = document.getElementById('ai-start').value;
+            const type = document.getElementById('ai-type').value;
+            const resultBox = document.getElementById('ai-result-box');
+
+            resultBox.classList.remove('hidden');
+            resultBox.innerHTML = `
+                <div class="flex items-center gap-2 text-brand-orange font-bold mb-2">
+                    <i class="fa-solid fa-spinner fa-spin"></i> Gemini AI is crafting your ${type} itinerary from ${start}...
+                </div>
+            `;
+
+            setTimeout(() => {
+                resultBox.innerHTML = `
+                    <h4 class="text-white font-bold font-cinematic text-base mb-2 text-brand-red">🗺️ AI Recommended Itinerary: ${start} to ${type} Explorer</h4>
+                    <p class="text-gray-300 text-xs mb-3"><strong>Day 1 (Morning Start 06:00 AM):</strong> Cruise via Bharatpur Highway towards historical landmarks. Stop at <em>Rana's Highway Dhaba</em> for authentic stuffed parathas and chai.</p>
+                    <p class="text-gray-300 text-xs mb-3"><strong>Day 1 (Midday):</strong> Arrive at destination, explore ancient palace architecture and capture cinematic GoPro helmet footage during golden hour.</p>
+                    <p class="text-gray-300 text-xs"><strong>Pro Tip from Bharatpur Rider:</strong> Check tire pressures before hitting the state highway and maintain group formation with hand signals!</p>
+                `;
+            }, 1200);
+        }
+
+        // AI Chatbot Handler
+        function sendAIChatMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+
+            if (!input.value.trim()) return;
+
+            const userText = input.value;
+            messages.innerHTML += `
+                <div class="p-3 rounded-xl bg-brand-dark border border-white/10 text-gray-200 text-right">
+                    <span class="text-brand-red font-semibold block mb-1">You:</span>
+                    ${userText}
+                </div>
+            `;
+            input.value = '';
+            messages.scrollTop = messages.scrollHeight;
+
+            setTimeout(() => {
+                let botReply = "That's an awesome question! For long rides around Bharatpur, I always recommend checking your chain lubrication and carrying a puncture kit.";
+                if (userText.toLowerCase().includes('bike') || userText.toLowerCase().includes('jawa')) {
+                    botReply = "I ride the Jawa 42 Bobber! It has an incredible exhaust note and turns heads everywhere on the highway.";
+                } else if (userText.toLowerCase().includes('camera') || userText.toLowerCase().includes('gopro')) {
+                    botReply = "I use the GoPro Hero 12 Black mounted on my chin mount paired with the DJI Mic 2 for crystal clear audio.";
+                }
+
+                messages.innerHTML += `
+                    <div class="p-3 rounded-xl bg-brand-card border border-white/5 text-gray-300">
+                        <span class="text-brand-orange font-semibold block mb-1">RiderBot:</span>
+                        ${botReply}
+                    </div>
+                `;
+                messages.scrollTop = messages.scrollHeight;
+            }, 800);
+        }
+
+        // Contact Form Submit Handler
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for reaching out to Bharatpur Rider! Your message has been sent successfully. We will get back to you soon.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
